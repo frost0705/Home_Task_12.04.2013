@@ -1,17 +1,14 @@
+///@author Morozov Nikolay IU8-21
+
 ///Примечание на будущее для себя: надо бы добавит проверку на отрицательные числа в конструкторе
-
-
-
 /**
 @class road
 
-@param length длинна дороги
-@param maxSpeed макимальная разрешенная скорость
-@param weight снаряженная масса автомобиля
-@param minTravelTime минимальное время в пути
-@param qualityOfRoad качество дороги. Коэффициэнт, научное объяснение которому еще предстоит придумать.
-
-
+@param length length of the road
+@param maxSpeed red line speed
+@param weight curb weight of the vehicle
+@param minTravelTime minimum travel time
+@param qualityOfRoad the quality of the road. Factor, a scientific explanation has yet to come up.
 */
 
 class road
@@ -24,7 +21,7 @@ private:
 
 public:
 
-	///Первый конструктор: задаем все кроме времени в пути. Оно вычисляется внутри конструктора
+	///The first constructor: ask all but the travel time. It is calculated within the constructor
 	road(int length, int maxSpeed, int qualityOfRoad)
 	{
 		road::length = length;
@@ -32,7 +29,7 @@ public:
 		road::minTravelTime = length/maxSpeed;
 		road::qualityOfRoad = qualityOfRoad;;
 	};
-	///Второй конструктор. На этой дороге лимит скорости либо неизвестен, либо не задан
+	///The second constructor. On this road the speed limit either unknown or unspecified
 	road(int length, int qualityOfRoad)
 	{
 
@@ -41,33 +38,33 @@ public:
 		road::minTravelTime = -1;
 		road::qualityOfRoad = qualityOfRoad;;
 	};
-	///Деструктор
+	///destructor
 	~road()
 	{
 		road::length = 0;
 		road::maxSpeed = 0;			
 	};
-	///Получить длину дороги
+	///Get the length of the road
 	int get_length()
 	{
 		return road::length;
 	}
-	///Получить максимальную разрешенную скорость
+	///Get speed limit
 	int get_max_speed()
 	{
 		return road::maxSpeed;
 	}
-	///Изменить протяженность пути
+	///Change the length of the path
 	void change_length(int lengthChange)
 	{
 		road::length +=lengthChange;
 	};
-	///Изменить максимальную скорость.
+	///Change the maximum speed.
 	void change_max_speed(int maxSpeedChange)
 	{
 		road::length +=maxSpeedChange;
 	};
-	///Врея в пути. Зависит от скорости автомобиля.
+	///Travel time. Depends on the speed of the car.
 	double travel_time(int maxSpeedOfCar)
 	{
 		double answer;
@@ -81,7 +78,7 @@ public:
 		}
 		return answer;
 	};
-	///Получить минимальное время в пути.
+	///Minimal time on the road.
 	double get_min_travel_time()
 	{
 		return minTravelTime;

@@ -1,20 +1,12 @@
-
 ///@author Morozov Nikolay IU8-21
-
-
-
-
-
 /**
 @class car
 
-@param power мощность двигатея
-@param fuelConsumtion расход топлива на 100 км пути
-@param weight снаряженная масса автомобиля
-@param fullSpeed максимальная скорость автомобиля
-@param timeOfAcceleration время разгона 0-100 км/ч
-
-
+@param power engine power
+@param fuelConsumtion fuel consumption per 100 kilometers
+@param weight curb weight of the vehicle
+@param fullSpeed top speed
+@param timeOfAcceleration the acceleration of 0-100 km / h
 */
 class car
 {
@@ -27,7 +19,7 @@ private:
 
 public:
 
-	///Конструктор, принимающий все параметры класса
+	///Constructor that takes all parameters class
 	car(int power, int fuelConsumption, int weight, int fullSpeed, double timeOfAcceleration)
 	{
 		car::power = power;
@@ -36,7 +28,7 @@ public:
 		car::fuelConsumption = fuelConsumption;
 		car::timeOfAcceleration = timeOfAcceleration;
 	};
-	///Конструктор, принимающий часть параметром и вычисляющий остальные через имеющиеся
+	///Constructor that takes a parameter and calculates the portion remaining in the existing
 	car(int weight, int fullSpeed, double timeOfAcceleration)
 	{
 		car::weight = weight;
@@ -45,7 +37,7 @@ public:
 		car::power = (weight/timeOfAcceleration);
 		car::fuelConsumption = (car::power)/11.5;
 	};
-	///Деструктор
+	///destructor
 	~car()
 	{
 		car::weight = 0;
@@ -54,38 +46,38 @@ public:
 		car::power = 0;
 		car::fuelConsumption = 0;
 	};
-	///Получение массы автомобиля
+	///Getting the car weight
 	int get_weight()
 	{
 		return car::weight;
 	};
-	///Получение максимальной скорости
+	///Getting the maximum speed
 	int get_full_speed()
 	{
 		return fullSpeed;
 	};
-	///Получение времени разгона 0-100 км/ч
+	///Obtaining acceleration 0-100 km / h
 	double get_time_of_acceleration()
 	{
 		return car::timeOfAcceleration;
 	};
-	///Получение пощности автомобиля
+	///Getting powered car
 	int get_power()
 	{
 		return car::power;
 	};
-	///Получение расхода топлива л/100км
+	///Getting fuel l/100km
 	int get_fuel_consumption()
 	{
 		return car::fuelConsumption;
 	};
-	///Тюнинг двигателя
+	///engine tuning
 	void engine_tuning(int powerChange, int fuelConsumptionChange)
 	{
 		car::power += powerChange;
 		car::fuelConsumption += fuelConsumptionChange;
 	};
-	///Тюнинг двигателя часть 2
+	///Engine tuning part 2
 	void engine_tuning(int powerChange)
 	{
 		car::power += powerChange;

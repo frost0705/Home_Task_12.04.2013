@@ -8,12 +8,12 @@ using namespace std ;
 
 typedef list<car> list_car;
 typedef list<road> list_road;
-///основное задание: вычисление количества топлива для прохождения пути
+///basic task: calculation of fuel for passage ways
 int fuel_consumption_on_a_route(int fuelConsumption, int roadLength)
 {
 	return (roadLength*fuelConsumption/100)+1;
 }
-///в программе несколько раз спрашивается решение пользователя. Эта функции обрабатывает ошибки ввода ответа.
+///Playing repeatedly asked by the decision. This function handles the input error response.
 void choice_way_bad_input(char *choice, char firstWay, char secondWay)
 {
 	while ((choice[0] != firstWay)&&(choice[0] != secondWay))
@@ -22,7 +22,7 @@ void choice_way_bad_input(char *choice, char firstWay, char secondWay)
 		choice[0] = _getch();
 	}
 }
-///демонстрационный сценарий
+///demo script
 void demo_mode()
 {
 	list_car::iterator i;
@@ -55,7 +55,7 @@ void demo_mode()
 
 	int g = 0;
 }
-///Рабочий сценарий.
+///Working script
 void work_mode()
 {
 	list_car::iterator i;
