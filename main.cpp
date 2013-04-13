@@ -161,10 +161,7 @@ void work_mode()
 
 
 int main()
-{
-
-	demo_mode();
-	/*
+{	
    	char choice;
 	
 	cout << "Do you want to run in demo mode? y\\n\n";
@@ -179,5 +176,5 @@ int main()
 	else
 	{
 		work_mode();
-	}*/
+	}
 }
